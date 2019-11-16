@@ -1,6 +1,9 @@
 class PunsController < ApplicationController
   def index
-    @pun = Pun.first
+    @pun = Pun.order("RANDOM()").first
   end
 
+  def new
+    @pun = Pun.new
+  end
 end
